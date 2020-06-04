@@ -22,6 +22,8 @@ public class Task {
      */
     private List<String> predecessors;
 
+    public Task() {}
+
     public Task(String name, List<String> predecessors) {
         this.name = name;
         this.predecessors = predecessors;

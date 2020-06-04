@@ -28,7 +28,7 @@ public class MainController {
 
     public MainController() {
         this.tasks = Arrays.asList(
-                new Task("E", Arrays.asList("B")),
+                new Task("E", Arrays.asList("B", "A")),
                 new Task("D", Arrays.asList("A", "B")),
                 new Task("A", Arrays.asList()),
                 new Task("B", Arrays.asList("A")),

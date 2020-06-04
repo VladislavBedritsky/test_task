@@ -15,7 +15,6 @@ import java.util.List;
  * @version 1.01 04 Jun 2020
  * @author Uladzislau Biadrytski
  */
-
 @Service
 public class ISchedulerImpl implements IScheduler {
 
@@ -24,7 +23,14 @@ public class ISchedulerImpl implements IScheduler {
 
     @Override
     public List<Task> schedule(List<Task> tasks) {
-        taskService.qq();
-        return new ArrayList<>();
+        Task taskWhichStartsFirst = taskService.findTaskWhichStartsFirst(tasks);
+
+        List<Task> completedTasks = new ArrayList<>();
+        completedTasks.add(taskWhichStartsFirst);
+
+        taskService.completeTasks(tasks, completedTasks);
+
+        return completedTasks;
     }
+
 }
