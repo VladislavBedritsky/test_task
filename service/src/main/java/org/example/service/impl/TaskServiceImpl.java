@@ -1,5 +1,7 @@
 package org.example.service.impl;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.example.domain.Task;
 import org.example.service.TaskService;
 import org.springframework.stereotype.Service;
@@ -14,6 +16,8 @@ import java.util.List;
  */
 @Service
 public class TaskServiceImpl implements TaskService {
+
+    private static Logger LOGGER = LogManager.getLogger(TaskServiceImpl.class);
 
     @Override
     public Task findTaskWhichStartsFirst(List<Task> tasks) {
@@ -60,7 +64,11 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public void completeTasks (List<Task> tasks, List<Task> completedTasks) {
+        int iterateCounter = 0;
+
+        outer:
         do {
+
             for (Task task : tasks) {
 
                 Boolean isPredecessorsEqualsToCompletedTasks =
@@ -74,7 +82,18 @@ public class TaskServiceImpl implements TaskService {
                 }
             }
 
+            iterateCounter++;
+            if (iterateCounter > tasks.size()) {
+                try {
+                    throw new RuntimeException();
+                } catch (RuntimeException e) {
+                    LOGGER.error("Predecessors wrong order. " +
+                            "Not all methods can be completed!");
+                }
+                break outer;
+            }
         } while (tasks.size() != completedTasks.size());
     }
+
 
 }

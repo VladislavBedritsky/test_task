@@ -45,8 +45,8 @@ public class MainControllerTest {
         this.tasks = Arrays.asList(
                 new Task("E", Arrays.asList("B", "A", "C")),
                 new Task("D", Arrays.asList("A", "B")),
-                new Task("A", Arrays.asList()),
-                new Task("B", Arrays.asList("A")),
+                new Task("B", Arrays.asList()),
+                new Task("A", Arrays.asList("B")),
                 new Task("C", Arrays.asList("D", "B")),
                 new Task("F", Arrays.asList("E"))
         );

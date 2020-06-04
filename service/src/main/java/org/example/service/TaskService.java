@@ -42,7 +42,8 @@ public interface TaskService {
 
     /**
      * An algorithm that checks whether tasks can be completed
-     * and then add them to collection of completed tasks.
+     * and then add them to collection of completed tasks. If task predecessors
+     * will be set in wrong order method will throw an exception.
      *
      * @param tasks Data tasks
      * @param completedTasks Completed tasks
