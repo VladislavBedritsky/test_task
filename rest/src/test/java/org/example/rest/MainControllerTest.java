@@ -1,4 +1,4 @@
-package org.example.main.rest;
+package org.example.rest;
 
 import org.example.domain.Task;
 import org.example.service.IScheduler;

@@ -15,6 +15,6 @@
     <mvc:annotation-driven/>
     <context:component-scan base-package="org.example.*"/>
 
-    <bean id="mainController" class="org.example.main.rest.MainController" />
+    <bean id="mainController" class="org.example.rest.MainController" />
 
 </beans>
