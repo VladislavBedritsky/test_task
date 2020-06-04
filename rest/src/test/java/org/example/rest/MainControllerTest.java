@@ -77,6 +77,8 @@ public class MainControllerTest {
 
     @Test
     public void printCompletedAndSortedTasks() {
-        System.out.println(iScheduler.schedule(tasks));
+        for (Task task : iScheduler.schedule(tasks)) {
+            System.out.println(task + "\n");
+        }
     }
 }
