@@ -7,8 +7,8 @@
  
 ## OR
 
- * You can run this unit test to check result:
- https://github.com/VladislavBedritsky/test_task/blob/12beed89247de33758d4df17d7541cf7eb5a1d30/main/src/test/java/org/example/main/rest/MainControllerTest.java#L79
+ * You can also run this unit test to check result:
+https://github.com/VladislavBedritsky/test_task/blob/76a0f2b2f6113a07fba56ab647713b0c6d10f8ea/rest/src/test/java/org/example/rest/MainControllerTest.java#L79
  
  ## Reference on task
  
