@@ -29,14 +29,14 @@ public class TaskServiceImpl implements TaskService {
     public Boolean checkIfPredecessorsEqualsToCompletedTasks (
             List<Task> completedTasks, List<String> predecessors ) {
 
-        int counter = 0;
+        int coincidencesCounter = 0;
 
         for (Task task : completedTasks) {
             for (String predecessor : predecessors) {
                 if (predecessor.equals(task.getName())) {
-                    counter++;
+                    coincidencesCounter++;
                 }
-                if (counter == predecessors.size()) {
+                if (coincidencesCounter == predecessors.size()) {
                     return true;
                 }
             }

@@ -28,7 +28,7 @@ public class MainController {
 
     public MainController() {
         this.tasks = Arrays.asList(
-                new Task("E", Arrays.asList("B", "A")),
+                new Task("E", Arrays.asList("B", "A", "C")),
                 new Task("D", Arrays.asList("A", "B")),
                 new Task("A", Arrays.asList()),
                 new Task("B", Arrays.asList("A")),
@@ -37,8 +37,13 @@ public class MainController {
         );
     }
 
+    /**
+     * GET request("/scheduler") for all tasks which have been completed and sorted.
+     *
+     * @return list of tasks
+     */
     @GetMapping
-    private List<Task> getSortedTasks() {
+    private List<Task> getCompletedAndSortedTasks() {
         return scheduler.schedule(tasks);
     }
 
