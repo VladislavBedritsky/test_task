@@ -11,7 +11,7 @@
     <modules>
         <module>domain</module>
         <module>service</module>
-        <module>main</module>
+        <module>rest</module>
     </modules>
 
     <properties>
@@ -45,7 +45,7 @@
             </dependency>
             <dependency>
                 <groupId>org.example</groupId>
-                <artifactId>main</artifactId>
+                <artifactId>rest</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
